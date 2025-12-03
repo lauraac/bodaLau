@@ -7,37 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- PREVIEW PARA WHATSAPP, FACEBOOK, ETC -->
+  <!-- PREVIEW PARA WHATSAPP, FACEBOOK -->
   <meta property="og:title" content="Invitación especial | Noche Negra" />
   <meta property="og:description"
-    content="Fiesta privada solo para valientes. Noche negra, risas, música y mucho desmadre." />
+    content="Fiesta privada solo para valientes. Noche negra, risas, música y mucha diversión." />
   <meta property="og:image" content="https://lauraac.github.io/carlos/img/carloss.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lauraac.github.io/carlos/" />
-
-  <!-- (Opcional) Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
 </head>
 
-
 <body>
-
   <div class="invite-shell">
     <main class="invite">
-      <!-- VIDEO INTRO GRANDE (con Adame) -->
+      <!-- VIDEO PRINCIPAL -->
       <section class="hero">
         <div class="video-wrapper video-wrapper-main">
-          <video id="introVideo" autoplay muted playsinline loop>
-            <!-- Cambia estos src por tus videos reales -->
-            <source src="img/carlos.mp4" type="video/mp4" />
 
+          <!-- Igual que tu prueba, pero con diseño -->
+          <video id="introVideo" controls playsinline loop>
+            <source src="img/carlos.mp4" type="video/mp4" />
             Tu navegador no soporta video.
           </video>
-
-          <!-- Botón para activar/desactivar sonido -->
-          <button class="sound-toggle" id="soundToggle">🔇</button>
 
           <div class="hero-overlay">
             <h1 class="hero-title">Noche Negra</h1>
@@ -46,17 +36,16 @@
         </div>
       </section>
 
-      <!-- PARTE INFERIOR: video principal + info + cuenta regresiva -->
+      <!-- PARTE INFERIOR: INFO + RELOJ -->
       <section class="bottom">
-
-        <!-- INFO + TEMÁTICA + RELOJ -->
         <div class="info-countdown">
+
           <section class="info-block">
             <h2>Lugar de la fiesta</h2>
             <p>
-              kanasin <strong>Barrio</strong><br />
-              Kanasin<br />
-              Kanasin
+              Kanasín <strong>Barrio</strong><br />
+              Kanasín<br />
+              Yucatán
             </p>
           </section>
 
@@ -92,12 +81,13 @@
               Prepárate, la noche se acerca…
             </p>
           </section>
+
         </div>
       </section>
     </main>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=1"></script>
 </body>
 
 </html>

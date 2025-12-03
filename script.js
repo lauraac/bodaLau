@@ -7,9 +7,7 @@ const EVENT_DATE_STRING = "2026-01-31T21:00:00"; // cámbialo por la fecha real
 // =========================
 // RELOJ REGRESIVO
 // =========================
-const countdownContainer = document.getElementById("countdown");
 const msgEl = document.getElementById("countdownMsg");
-
 const daysEl = document.getElementById("days");
 const hoursEl = document.getElementById("hours");
 const minutesEl = document.getElementById("minutes");
@@ -21,7 +19,6 @@ function updateCountdown() {
   const diff = eventTime - now;
 
   if (diff <= 0) {
-    // Ya empezó la fiesta
     daysEl.textContent = "00";
     hoursEl.textContent = "00";
     minutesEl.textContent = "00";
@@ -45,39 +42,5 @@ function updateCountdown() {
   secondsEl.textContent = String(secondsLeft).padStart(2, "0");
 }
 
-// Actualiza cada segundo
 updateCountdown();
 setInterval(updateCountdown, 1000);
-
-// =========================
-// CONTROL DE SONIDO INTRO
-// =========================
-const introVideo = document.getElementById("introVideo");
-const soundToggle = document.getElementById("soundToggle");
-
-if (introVideo && soundToggle) {
-  // Aseguramos que arranque en silencio
-  introVideo.muted = true;
-
-  const activarSonido = () => {
-    introVideo.muted = false;
-    introVideo.volume = 1; // volumen al máximo
-    introVideo.play().catch(() => {
-      // iOS a veces bloquea, ignoramos el error silenciosamente
-    });
-    soundToggle.textContent = "🔊";
-  };
-
-  const silenciar = () => {
-    introVideo.muted = true;
-    soundToggle.textContent = "🔇";
-  };
-
-  soundToggle.addEventListener("click", () => {
-    if (introVideo.muted) {
-      activarSonido(); // 🔇 → 🔊
-    } else {
-      silenciar(); // 🔊 → 🔇
-    }
-  });
-}
