@@ -55,14 +55,29 @@ setInterval(updateCountdown, 1000);
 const introVideo = document.getElementById("introVideo");
 const soundToggle = document.getElementById("soundToggle");
 
-if (soundToggle && introVideo) {
+if (introVideo && soundToggle) {
+  // Aseguramos que arranque en silencio
+  introVideo.muted = true;
+
+  const activarSonido = () => {
+    introVideo.muted = false;
+    introVideo.volume = 1; // volumen al máximo
+    introVideo.play().catch(() => {
+      // iOS a veces bloquea, ignoramos el error silenciosamente
+    });
+    soundToggle.textContent = "🔊";
+  };
+
+  const silenciar = () => {
+    introVideo.muted = true;
+    soundToggle.textContent = "🔇";
+  };
+
   soundToggle.addEventListener("click", () => {
     if (introVideo.muted) {
-      introVideo.muted = false;
-      soundToggle.textContent = "🔊";
+      activarSonido(); // 🔇 → 🔊
     } else {
-      introVideo.muted = true;
-      soundToggle.textContent = "🔇";
+      silenciar(); // 🔊 → 🔇
     }
   });
 }
