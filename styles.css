@@ -1,0 +1,241 @@
+/* ========== RESETEO BÁSICO ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #000;
+  color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  overflow: hidden; /* IMPORTANTE: sin scroll */
+}
+
+/* Contenedor tipo "celular" */
+.invite-shell {
+  width: 100%;
+  max-width: 480px;
+  height: 100vh;
+  padding: 8px;
+}
+
+/* Tarjeta principal */
+.invite {
+  height: 100%;
+  border-radius: 18px;
+  background: radial-gradient(circle at top, #222 0, #050505 55%, #000 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ========== LAYOUT SUPERIOR / INFERIOR ========== */
+.hero {
+  flex: 0 0 55%; /* 55% de alto para el intro */
+  padding: 10px 10px 4px;
+}
+
+.bottom {
+  flex: 1;
+  padding: 4px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ========== VIDEOS ========== */
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111;
+}
+
+/* Intro grande */
+.video-wrapper-main {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+}
+
+/* Video principal más pequeño */
+.video-wrapper-secondary {
+  flex: 0 0 40%; /* 40% de la parte de abajo */
+  border-radius: 14px;
+}
+
+/* Video ocupa todo el contenedor */
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay de título en el video intro */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0,
+    rgba(0, 0, 0, 0.3) 40%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 12px;
+}
+
+.hero-title {
+  font-size: 1.5rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.hero-subtitle {
+  font-size: 0.78rem;
+  color: #d0d0d0;
+}
+
+/* Botón de sonido */
+.sound-toggle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+
+/* ========== INFO + COUNTDOWN ========== */
+
+.info-countdown {
+  flex: 1;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 4px;
+  font-size: 0.8rem;
+}
+
+/* Bloques de texto */
+.info-block {
+  padding: 6px 8px;
+  border-radius: 10px;
+  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.info-block h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #f9f9f9;
+  margin-bottom: 2px;
+}
+
+.info-block p {
+  line-height: 1.25;
+  color: #d4d4d4;
+}
+
+/* Countdown */
+.countdown-block {
+  padding: 6px 8px 8px;
+  border-radius: 10px;
+  background: radial-gradient(circle at top, #171717 0, #050505 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.countdown-block h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 4px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.time-box {
+  flex: 1;
+  padding: 4px 2px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #111, #050505);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.time-box span {
+  display: block;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.time-box small {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #b0b0b0;
+}
+
+.countdown-msg {
+  font-size: 0.7rem;
+  color: #c8c8c8;
+}
+
+/* ========== MOBILE FINO ========== */
+@media (max-height: 650px) {
+  .hero-title {
+    font-size: 1.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.7rem;
+  }
+
+  .info-block,
+  .countdown-block {
+    font-size: 0.75rem;
+  }
+
+  .time-box span {
+    font-size: 0.9rem;
+  }
+}
+<!-- OVERLAY QUE ACTIVA EL AUDIO -->
+<div id="tapToStart" class="tap-overlay">
+  <p>Toca para entrar 🔊</p>
+</div>

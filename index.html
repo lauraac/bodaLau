@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Invitación especial | Noche Negra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- OVERLAY QUE ACTIVA EL AUDIO -->
+  <div id="tapToStart" class="tap-overlay">
+    <p>Toca para entrar 🔊</p>
+  </div>
+
+  <div class="invite-shell">
+    <main class="invite">
+      <!-- VIDEO INTRO GRANDE (con Adame) -->
+      <section class="hero">
+        <div class="video-wrapper video-wrapper-main">
+          <video id="introVideo" autoplay muted playsinline loop>
+            <!-- Cambia estos src por tus videos reales -->
+            <source src="/img/carlos.mp4" type="video/mp4" />
+            Tu navegador no soporta video.
+          </video>
+
+          <!-- Botón para activar/desactivar sonido -->
+          <button class="sound-toggle" id="soundToggle">🔇</button>
+
+          <div class="hero-overlay">
+            <h1 class="hero-title">Noche Negra</h1>
+            <p class="hero-subtitle">Fiesta privada · Solo para valientes</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PARTE INFERIOR: video principal + info + cuenta regresiva -->
+      <section class="bottom">
+
+        <!-- INFO + TEMÁTICA + RELOJ -->
+        <div class="info-countdown">
+          <section class="info-block">
+            <h2>Lugar de la fiesta</h2>
+            <p>
+              kanasin <strong>Barrio</strong><br />
+              Kanasin<br />
+              Kanasin
+            </p>
+          </section>
+
+          <section class="info-block">
+            <h2>Temática: Color negro</h2>
+            <p>
+              Vístete de negro de pies a cabeza. Entre más oscuro tu outfit,
+              más brillas en la noche.
+            </p>
+          </section>
+
+          <section class="countdown-block">
+            <h2>El tiempo corre...</h2>
+            <div class="countdown" id="countdown">
+              <div class="time-box">
+                <span id="days">00</span>
+                <small>días</small>
+              </div>
+              <div class="time-box">
+                <span id="hours">00</span>
+                <small>hrs</small>
+              </div>
+              <div class="time-box">
+                <span id="minutes">00</span>
+                <small>min</small>
+              </div>
+              <div class="time-box">
+                <span id="seconds">00</span>
+                <small>seg</small>
+              </div>
+            </div>
+            <p class="countdown-msg" id="countdownMsg">
+              Prepárate, la noche se acerca…
+            </p>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
