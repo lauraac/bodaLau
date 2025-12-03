@@ -35,13 +35,15 @@ body {
 
 /* Tarjeta principal */
 .invite {
-  height: 100%;
+  /* deja que crezca lo que necesite */
+  min-height: 100%;
   border-radius: 18px;
   background: radial-gradient(circle at top, #222 0, #050505 55%, #000 100%);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  /* quita el overflow hidden */
+  /* overflow: hidden;  👈 bórralo */
 }
 
 /* ========== LAYOUT SUPERIOR / INFERIOR ========== */
