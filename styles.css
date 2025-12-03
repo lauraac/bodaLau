@@ -20,15 +20,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  overflow: hidden; /* IMPORTANTE: sin scroll */
+  overflow-y: auto; /* ✅ ahora sí deja hacer scroll */
+  overflow-x: hidden; /* para que no se mueva a los lados */
 }
 
 /* Contenedor tipo "celular" */
 .invite-shell {
   width: 100%;
   max-width: 480px;
-  height: 100vh;
-  padding: 8px;
+  min-height: 100vh; /* ocupa al menos el alto de la pantalla */
+  margin: 0 auto;
+  padding: 8px 0 24px;
 }
 
 /* Tarjeta principal */
@@ -82,7 +84,8 @@ body {
 .video-wrapper video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* ✅ se ve completo */
+  background: #000; /* rellena con negro si sobran bordes */
 }
 
 /* Overlay de título en el video intro */

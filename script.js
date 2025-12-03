@@ -57,8 +57,6 @@ const soundToggle = document.getElementById("soundToggle");
 
 if (soundToggle && introVideo) {
   soundToggle.addEventListener("click", () => {
-    // Por políticas de los navegadores, el video empieza mute.
-    // Con el click ya podemos activar el audio.
     if (introVideo.muted) {
       introVideo.muted = false;
       soundToggle.textContent = "🔊";
@@ -68,21 +66,3 @@ if (soundToggle && introVideo) {
     }
   });
 }
-// ================================
-// ACTIVAR AUDIO AUTOMÁTICO
-// ================================
-const tapOverlay = document.getElementById("tapToStart");
-
-tapOverlay.addEventListener("click", () => {
-  // Ocultar pantalla de toque
-  tapOverlay.style.opacity = "0";
-  setTimeout(() => (tapOverlay.style.display = "none"), 300);
-
-  // Reproducir intro con audio
-  introVideo.muted = false;
-  introVideo.play().catch(() => {});
-
-  // Reproducir video principal (opcional)
-  const mainVideo = document.getElementById("mainVideo");
-  mainVideo.play().catch(() => {});
-});
