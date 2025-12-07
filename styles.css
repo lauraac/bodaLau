@@ -27,6 +27,8 @@ body {
 .invite-shell {
   width: 100%;
   max-width: 420px;
+  position: relative;
+  z-index: 5; /* la tarjeta va por encima de los brillos */
 }
 
 .invite {
@@ -284,7 +286,7 @@ body {
   width: 100vw;
   height: 100vh;
   pointer-events: none; /* No bloquea botones ni scroll */
-  z-index: 9999;
+  z-index: 0; /* ANTES 9999 */
   overflow: hidden;
 }
 
