@@ -28,7 +28,7 @@ body {
   width: 100%;
   max-width: 420px;
   position: relative;
-  z-index: 5; /* la tarjeta va por encima de los brillos */
+  z-index: 5;
 }
 
 .invite {
@@ -76,6 +76,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   padding: 16px;
+  pointer-events: none; /* 👈 ESTA LÍNEA ES LA CLAVE */
 }
 
 .hero-title {
@@ -285,8 +286,8 @@ body {
   inset: 0;
   width: 100vw;
   height: 100vh;
-  pointer-events: none; /* No bloquea botones ni scroll */
-  z-index: 0; /* ANTES 9999 */
+  pointer-events: none;
+  z-index: 0;
   overflow: hidden;
 }
 
