@@ -2,7 +2,7 @@
 // CONFIGURA AQUÍ LA FECHA
 // =========================
 // Formato: "YYYY-MM-DDTHH:MM:SS"
-const EVENT_DATE_STRING = "2025-12-27T21:00:00"; // cámbialo por la fecha real
+const EVENT_DATE_STRING = "2026-04-11T21:00:00"; // cámbialo por la fecha real
 
 // =========================
 // RELOJ REGRESIVO
